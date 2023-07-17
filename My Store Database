@@ -1,0 +1,25 @@
+--Create a store database
+
+CREATE TABLE candles (id INTEGER PRIMARY KEY, name TEXT, description TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO candles VALUES (1, "Halloween", "Pumpkin spice", 5, 5);
+INSERT INTO candles VALUES (2, "Christmas", "Pine", 10, 5);
+INSERT INTO candles VALUES (3, "Spring", "Roses", 12, 3);
+INSERT INTO candles VALUES (4, "Summer", "Sea Salt", 34, 4);
+INSERT INTO candles VALUES (5, "Farm", "Apples", 0, 4);
+INSERT INTO candles VALUES (6, "Ocean", "Sea_breeze", 3, 5);
+INSERT INTO candles VALUES (7, "Vanilla", "Vanilla bean", 2, 3);
+INSERT INTO candles VALUES (8, "Cupcakes", "Sweet_and_warm", 39, 4);
+INSERT INTO candles VALUES (9, "Citrus", "Lemon", 18, 4);
+INSERT INTO candles VALUES (10, "Home", "Flowers", 1, 2);
+INSERT INTO candles VALUES (11, "Vacation", "Sweet_gardenia", 14, 3);
+INSERT INTO candles VALUES (12, "School", "Sharpened_pencils", 28, 4);
+INSERT INTO candles VALUES (13, "Cookies", "Sugar_and_chocolate", 8, 5);
+INSERT INTO candles VALUES (14, "Fields", "Grass", 7, 2);
+INSERT INTO candles VALUES (15, "Kitchen", "Onions_and_garlic", 8, 1);
+
+--Display the database ordered by price
+SELECT * FROM candles ORDER BY price;
+
+--What items have a quantity of more than 10?
+SELECT * FROM candles WHERE quantity >10 ORDER BY price;
