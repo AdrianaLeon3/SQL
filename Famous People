@@ -1,0 +1,22 @@
+Create a table with some small set of “famous people”, then make more tables about things they do and join those to create nice human readable lists.
+
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, name TEXT, occupation TEXT, age INTEGER);
+
+INSERT INTO famous_people (name, occupation, age) VALUES ("Johnny Depp", "Actor", 54);
+INSERT INTO famous_people (name, occupation, age) VALUES ("Reese Witherspoon", "Actor", 45);
+INSERT INTO famous_people (name, occupation, age) VALUES ("Ariana Grande", "Singer", 31);
+INSERT INTO famous_people (name, occupation, age) VALUES ("Bruno Mars", "Singer", 33);
+INSERT INTO famous_people (name, occupation, age) VALUES ("Sofia Vegara", "Actor", 45);
+
+CREATE TABLE marital_status (id INTEGER PRIMARY KEY, actor_id INTEGER, marital_status TEXT);
+INSERT INTO marital_status (actor_id, marital_status) VALUES (1, "Divorced");
+INSERT INTO marital_status (actor_id, marital_status) VALUES (2, "Married");
+INSERT INTO marital_status (actor_id, marital_status) VALUES (3, "Divorced");
+INSERT INTO marital_status (actor_id, marital_status) VALUES (4, "Single");
+INSERT INTO marital_status (actor_id, marital_status) VALUES (5, "Divorced");
+
+SELECT f.name, m.marital_status
+    FROM famous_people AS f
+    JOIN marital_status AS m
+    ON f.id = m.actor_id
+    ORDER BY marital_status;
